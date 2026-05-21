@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Implementation Notes</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #1a1a1a;
+      --muted: #666;
+      --border: #e0e0e0;
+      --card: #ffffff;
+      --deviation: #d97706;
+      --tradeoff: #2563eb;
+      --gotcha: #dc2626;
+      --question: #ca8a04;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a1a;
+        --fg: #e8e8e8;
+        --muted: #9a9a9a;
+        --border: #333;
+        --card: #242424;
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+    }
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .page-header h1 {
+      margin: 0 0 1rem;
+      font-size: 1.6rem;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 0.3rem 1rem;
+      font-size: 0.9rem;
+      margin: 0 0 1rem;
+    }
+    .meta dt { color: var(--muted); font-weight: 500; }
+    .meta dd { margin: 0; }
+    .filter { font-size: 0.9rem; color: var(--muted); }
+    .filter select {
+      font-size: 0.9rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--fg);
+    }
+    .note {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .note[hidden] { display: none; }
+    .note-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .note-header h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      flex: 1;
+      min-width: 0;
+    }
+    .note-header time {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag-deviation     { background: var(--deviation); }
+    .tag-tradeoff      { background: var(--tradeoff); }
+    .tag-gotcha        { background: var(--gotcha); }
+    .tag-open-question { background: var(--question); }
+    .note section { margin-top: 0.65rem; }
+    .note h3 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin: 0 0 0.25rem;
+      font-weight: 600;
+    }
+    .note p, .note ul { margin: 0; }
+    .note ul { padding-left: 1.25rem; }
+    .note li + li { margin-top: 0.15rem; }
+    code {
+      background: var(--border);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.875em;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    }
+    a { color: var(--tradeoff); }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>Implementation Notes: <!-- SPEC NAME --></h1>
+    <dl class="meta">
+      <dt>Spec</dt>        <dd><a href="<!-- SPEC LINK -->"><!-- SPEC NAME --></a></dd>
+      <dt>Branch</dt>      <dd><code><!-- BRANCH --></code></dd>
+      <dt>Started</dt>     <dd><!-- YYYY-MM-DD --></dd>
+      <dt>Last updated</dt><dd><!-- YYYY-MM-DD --></dd>
+      <dt>Status</dt>      <dd><!-- in-progress | merged | archived --></dd>
+      <dt>Related PRs</dt> <dd><!-- empty until PRs exist --></dd>
+    </dl>
+    <div class="filter">
+      <label>Filter:
+        <select id="tag-filter">
+          <option value="all">All entries</option>
+          <option value="deviation">Deviations</option>
+          <option value="tradeoff">Tradeoffs</option>
+          <option value="gotcha">Gotchas</option>
+          <option value="open-question">Open Questions</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main id="entries">
+    <!-- Append <article class="note" data-tag="..."> entries here, newest at top -->
+  </main>
+
+  <script>
+    document.getElementById("tag-filter").addEventListener("change", (e) => {
+      const sel = e.target.value;
+      document.querySelectorAll(".note").forEach(n => {
+        n.hidden = !(sel === "all" || n.dataset.tag === sel);
+      });
+    });
+  </script>
+</body>
+</html>
