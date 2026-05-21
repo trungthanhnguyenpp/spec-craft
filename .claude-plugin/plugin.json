@@ -1,0 +1,12 @@
+{
+  "name": "spec-craft",
+  "version": "0.1.0",
+  "description": "Skills for turning vague ideas into clear specs and well-documented implementations",
+  "author": {
+    "name": "Holden",
+    "email": "trung.thanh.nguyen@parcelperform.com"
+  },
+  "homepage": "https://github.com/trungthanhnguyenpp/spec-craft",
+  "repository": "https://github.com/trungthanhnguyenpp/spec-craft",
+  "keywords": ["spec", "interview", "socratic", "implementation"]
+}

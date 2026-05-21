@@ -1,0 +1,14 @@
+{
+  "name": "spec-craft",
+  "owner": {
+    "name": "Holden",
+    "email": "trung.thanh.nguyen@parcelperform.com"
+  },
+  "plugins": [
+    {
+      "name": "spec-craft",
+      "source": ".",
+      "description": "Skills for turning vague ideas into clear specs and well-documented implementations"
+    }
+  ]
+}

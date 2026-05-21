@@ -1,6 +1,6 @@
 # spec-craft
 
-A pair of Claude Code skills for turning vague ideas into clear specs and then into well-documented implementations.
+A Claude Code plugin with two skills for turning vague ideas into clear specs and then into well-documented implementations.
 
 ## Skills
 
@@ -9,27 +9,20 @@ A pair of Claude Code skills for turning vague ideas into clear specs and then i
 
 ## Install
 
-Clone into your Claude Code skills directory:
+In Claude Code, run:
 
-```bash
-git clone <repo-url> ~/Desktop/spec-craft
-ln -s ~/Desktop/spec-craft/socratic-spec ~/.claude/skills/socratic-spec
-ln -s ~/Desktop/spec-craft/implement-with-notes ~/.claude/skills/implement-with-notes
+```
+/plugin marketplace add trungthanhnguyenpp/spec-craft
+/plugin install spec-craft
 ```
 
-Or, if you prefer to keep skills directly under `~/.claude/skills/`, copy instead of symlink:
-
-```bash
-git clone <repo-url> /tmp/spec-craft
-cp -r /tmp/spec-craft/socratic-spec ~/.claude/skills/
-cp -r /tmp/spec-craft/implement-with-notes ~/.claude/skills/
-```
-
-Symlinks are recommended — they let you `git pull` updates and have them apply immediately.
+That's it — both skills are now available.
 
 ## Use
 
-In Claude Code:
-
 - `/socratic-spec` — start the interview
 - `/implement-with-notes <spec>` — implement a spec with notes
+
+## Updating
+
+Plugins update through `/plugin` — run `/plugin marketplace update spec-craft` to pull the latest, then restart Claude Code if needed.
