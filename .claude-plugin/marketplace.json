@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "spec-craft",
-      "source": ".",
+      "source": "./",
       "description": "Skills for turning vague ideas into clear specs and well-documented implementations"
     }
   ]
