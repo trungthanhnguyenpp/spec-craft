@@ -9,7 +9,7 @@
     {
       "name": "spec-craft",
       "source": "./plugins/spec-craft",
-      "description": "Skills for turning vague ideas into clear specs and well-documented implementations"
+      "description": "Skills for turning vague ideas into clear specs, well-documented implementations, and tidy GitLab reviews"
     }
   ]
 }

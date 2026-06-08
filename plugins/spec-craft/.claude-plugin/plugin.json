@@ -1,12 +1,12 @@
 {
   "name": "spec-craft",
-  "version": "0.2.0",
-  "description": "Skills for turning vague ideas into clear specs and well-documented implementations",
+  "version": "0.3.0",
+  "description": "Skills for turning vague ideas into clear specs, well-documented implementations, and tidy GitLab reviews",
   "author": {
     "name": "Holden",
     "email": "trung.thanh.nguyen@parcelperform.com"
   },
   "homepage": "https://github.com/trungthanhnguyenpp/spec-craft",
   "repository": "https://github.com/trungthanhnguyenpp/spec-craft",
-  "keywords": ["spec", "interview", "socratic", "implementation"]
+  "keywords": ["spec", "interview", "socratic", "implementation", "gitlab", "code-review"]
 }
